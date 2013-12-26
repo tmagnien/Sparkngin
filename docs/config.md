@@ -32,40 +32,40 @@ Sets the network information to connect to zeromq server. Port can be left unspe
 sparkngin_buffer_size
 ---------------------
 
-syntax:	    sparkngin_buffer_size size;
+**syntax:**	`sparkngin_buffer_size size;`
 
-default:    4M
-context:    http
+**default:**	`4M`  
+**context:**	`http`
 
 Sets log data buffer size. Buffer will be used when no zeromz listener are available. Module will write logs to this buffer and will delete older entries when full, until a listener becomes available.
 
 sparkngin_gzip
 --------------
 
-syntax:	    sparkngin_gzip on/off;
+**syntax:**	`sparkngin_gzip on/off;`
 
-default:    off
-context:    http
+**default:**	`off`  
+**context:**	`http`
 
 Indicates if module has to gzip logs before sending.
 
 sparkngin_gzip_buffer_size
 --------------------------
 
-syntax:	    sparkngin_gzip_buffer_size size;
+**syntax:**	`sparkngin_gzip_buffer_size size;`
 
-default:    1M
-context:    http
+**default:**    `1M`  
+**context:**    `http`
 
 Sets the size of the gzip buffer. Module will wait until sparkngin_gzip_buffer_size is reached before actually sending data.
 
 sparkngin_format
 ----------------
 
-syntax:	    sparkngin_format (json|plain) ['delimiter'];
+**syntax:**	`sparkngin_format (json|plain) ['delimiter'];`
 
-default:    plain ' '
-context:    http
+**default:**    `plain ' '`  
+**context:**    `http`
 
 Sets module outpout format:
 - json will log data in json format
@@ -74,10 +74,10 @@ Sets module outpout format:
 sparkngin_root_loc
 ------------------
 
-syntax:	    sparkngin_root_loc;
+**syntax:**	`sparkngin_root_loc;`
 
-default:    none
-context:    location
+**default:**    `none`  
+**context:**    `location`
 
 Sets Sparkngin root location.
 
