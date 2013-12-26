@@ -10,11 +10,48 @@ Sparkngin Nginx module allows for logging Nginx activity to a zeromq server.
 Configuration of this module includes:
 - zeromq server properties
 - output properties
+- zeromq options
 
 Example Configuration
 =====================
 
-TODO
+`
+worker_processes  2;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    sparkngin_zeromq_server localhost:7000;
+    sparkngin_buffer_size 4M;
+    sparkngin_gzip on;
+    sparkngin_gzip_buffer_size 1M;
+    sparkngin_format json;
+    sparkngin_log_fields %version% %ip% %time_stamp% %level% %topic% %user-agent% %referrer% %cookie%;
+
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  65;
+
+    server {
+	listen       80;
+	server_name  localhost;
+
+	location / {
+	    root   html;
+	    index  index.html index.htm;
+	}
+
+	location /sparkngin {
+	    sparkngin_root_loc ;
+	}
+    }
+}
+`
 
 Directives
 ==========
