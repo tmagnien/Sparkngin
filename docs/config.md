@@ -22,10 +22,10 @@ Directives
 sparkngin_zeromq_server
 -----------------------
 
-syntax:	    `sparkngin_zeromq_server hostname[:port];`
+**syntax:**	`sparkngin_zeromq_server hostname[:port];`
 
-default:    `no default hostname, default port is 7000`
-context:    `http`
+**default:**	`no default hostname, default port is 7000`  
+**context:**	`http`
 
 Sets the network information to connect to zeromq server. Port can be left unspecified and will default to 7000.
 
